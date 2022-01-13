@@ -17,40 +17,6 @@ List<ProductReview> productReviewList = new List<ProductReview>()
     new ProductReview(){ProductID=9,UserID=1,Rating=10,Review="Nice",Islike=true},
     new ProductReview(){ProductID=10,UserID=1,Rating=8,Review="Nice",Islike=true},
 };
-
-
-//created datatable
-DataTable dt = new DataTable();
-dt.Columns.Add("ProductId");
-dt.Columns.Add("UserId");
-dt.Columns.Add("Review");
-dt.Columns.Add("Rating");
-dt.Columns.Add("Islike");
-//created row
-dt.Rows.Add("1", "2", "Good", "4", "True");
-dt.Rows.Add("1", "2", "Bad", "5", "False");
-dt.Rows.Add("2", "1", "Very Good", "5", "False");
-dt.Rows.Add("4", "2", "Good", "4", "True");
-dt.Rows.Add("3", "2", "Bad", "5", "False");
-dt.Rows.Add("5", "1", "Very Good", "5", "False");
-dt.Rows.Add("5", "2", "Good", "4", "True");
-dt.Rows.Add("6", "2", "Bad", "5", "False");
-dt.Rows.Add("7", "1", "Very Good", "5", "False");
-dt.Rows.Add("8", "2", "Good", "4", "True");
-dt.Rows.Add("9", "2", "Bad", "5", "False");
-dt.Rows.Add("10", "1", "Very Good", "5", "False");
-dt.Rows.Add("12", "2", "Good", "4", "True");
-dt.Rows.Add("12", "2", "Bad", "5", "False");
-dt.Rows.Add("11", "1", "Very Good", "5", "False");
-dt.Rows.Add("13", "2", "Good", "4", "True");
-dt.Rows.Add("14", "2", "Bad", "5", "False");
-dt.Rows.Add("15", "1", "Very Good", "5", "False");
-dt.Rows.Add("16", "2", "Good", "4", "True");
-dt.Rows.Add("17", "2", "Bad", "5", "False");
-dt.Rows.Add("18", "1", "Very Good", "5", "False");
-dt.Rows.Add("19", "2", "Good", "4", "True");
-dt.Rows.Add("20", "2", "Bad", "5", "False");
-dt.Rows.Add("1", "1", "Very Good", "5", "False");
 Console.WriteLine("Select \n1)CreateProductReview\n2)Retrive Top 3 Review\n3)retrive record whose rating >3\n" +
     "4)GroupBy\n5)Retrive ProductId and review\n6)SkipTop5Records\n7)Datatable\n");
 int option = Convert.ToInt16(Console.ReadLine());
