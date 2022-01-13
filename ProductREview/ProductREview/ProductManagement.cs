@@ -160,5 +160,20 @@ namespace ProductREview
                 Console.WriteLine("Product Id:{0} => Average Rating :{1}", line.products, line.Count);
             }
         }
+
+        /// <summary>
+        /// Who's REview Message Conatains Nce
+        /// </summary>
+        /// <param name="productreviewlist"></param>
+        public static void NiceReview(List<ProductReview> productreviewlist)
+        {
+            foreach (var list in (from productReviews in productreviewlist
+                                        where productReviews.Review == "Nice"
+                                        select productReviews))
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                      + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.Islike);
+            }
+        }
     }
 }
