@@ -17,9 +17,19 @@ List<ProductReview> productReviewList = new List<ProductReview>()
     new ProductReview(){ProductID=9,UserID=1,Rating=10,Review="Nice",Islike=true},
     new ProductReview(){ProductID=10,UserID=1,Rating=8,Review="Nice",Islike=true},
 };
-//Display list
-foreach (var product in productReviewList)
+Console.WriteLine("Select \n1)CreateProductReview\n2)Retrive Top 3 Review");
+int option = Convert.ToInt16(Console.ReadLine());
+switch(option)
 {
-    Console.WriteLine("----------------------------------------");
-    Console.WriteLine(product.ProductID +" | " +product.UserID + " | " +product.Rating + " | " +product.Review + " | " +product.Islike );
+    case 1:
+        //Display list
+        foreach (var product in productReviewList)
+        {
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine(product.ProductID + " | " + product.UserID + " | " + product.Rating + " | " + product.Review + " | " + product.Islike);
+        }
+        break;
+    case 2:
+        ProductManagement.Top3Records(productReviewList);
+        break;
 }
