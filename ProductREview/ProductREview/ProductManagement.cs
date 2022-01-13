@@ -121,7 +121,22 @@ namespace ProductREview
             dt.Rows.Add("19", "2", "Good", "4", "True");
             dt.Rows.Add("20", "2", "Bad", "5", "False");
             dt.Rows.Add("1", "1", "Very Good", "5", "False");
+            //All Data from datatable
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("------------All Data from the dataTable------------");
+            Console.ResetColor();
             foreach (DataRow row in dt.Rows)
+            {
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine($"{row["ProductId"]}\t|{row["UserId"]}\t|{row["Review"]}\t|{row["Rating"]}\t|{row["Islike"]}");
+            }
+            //retrive Data from datatable who's islike value is true
+            
+            IEnumerable<DataRow> rows = dt.AsEnumerable().Where(r => r.Field<string>("Islike") == "True");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\n-----------Data from datatable who's islike value is true------------");
+            Console.ResetColor();
+            foreach (DataRow row in rows)
             {
                 Console.WriteLine("--------------------------------------------------------");
                 Console.WriteLine($"{row["ProductId"]}\t|{row["UserId"]}\t|{row["Review"]}\t|{row["Rating"]}\t|{row["Islike"]}");
