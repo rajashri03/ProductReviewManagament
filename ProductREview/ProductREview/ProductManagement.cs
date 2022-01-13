@@ -56,5 +56,31 @@ namespace ProductREview
                 Console.WriteLine("Product Id:{0} => Count :{1}", line.products, line.Count);
             }
         }
+        /// <summary>
+        /// Retrive only product id and review
+        /// </summary>
+        /// <param name="productreviewlist"></param>
+        public static void RetriveProductIDReview(List<ProductReview> productreviewlist)
+        {
+            foreach (var line in productreviewlist.Select(group => new {
+                               products = group.ProductID,
+                               productsreview=group.Review}))
+            {
+                Console.WriteLine("Product Id:{0} || Reviews:{1}", line.products, line.productsreview);
+            }
+        }
+        /// <summary>
+        /// Skip top 5 records
+        /// </summary>
+        /// <param name="productreviewlist"></param>
+        public static void SkipTop5Records(List<ProductReview> productreviewlist)
+        {
+            foreach (var productData in (from productReviews in productreviewlist
+                                         select productReviews).Skip(5))
+            {
+                Console.WriteLine("Product Id:{0} || UserID:{1} || Review:{2} ||Rating:{3} || IsLike:{4}", 
+                    productData.ProductID,productData.UserID,productData.Review,productData.Rating,productData.Islike);
+            }
+        }
     }
 }

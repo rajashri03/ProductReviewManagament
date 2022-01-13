@@ -17,7 +17,8 @@ List<ProductReview> productReviewList = new List<ProductReview>()
     new ProductReview(){ProductID=9,UserID=1,Rating=10,Review="Nice",Islike=true},
     new ProductReview(){ProductID=10,UserID=1,Rating=8,Review="Nice",Islike=true},
 };
-Console.WriteLine("Select \n1)CreateProductReview\n2)Retrive Top 3 Review\n3)retrive record whose rating >3\n4)GroupBy");
+Console.WriteLine("Select \n1)CreateProductReview\n2)Retrive Top 3 Review\n3)retrive record whose rating >3\n" +
+    "4)GroupBy\n5)Retrive ProductId and review\n6)SkipTop5Records\n");
 int option = Convert.ToInt16(Console.ReadLine());
 switch(option)
 {
@@ -37,6 +38,12 @@ switch(option)
         break;
     case 4:
         ProductManagement.CountRecords(productReviewList);
+        break;
+    case 5:
+        ProductManagement.RetriveProductIDReview(productReviewList);
+        break;
+    case 6:
+        ProductManagement.SkipTop5Records(productReviewList);
         break;
     default:
         Console.WriteLine("Wrong Choice");
