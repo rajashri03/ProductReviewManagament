@@ -15,11 +15,15 @@ List<ProductReview> productReviewList = new List<ProductReview>()
     new ProductReview(){ProductID=7,UserID=1,Rating=10,Review="Good",Islike=false},
     new ProductReview(){ProductID=8,UserID=1,Rating=9,Review="Nice",Islike=true},
     new ProductReview(){ProductID=10,UserID=1,Rating=10,Review="Nice",Islike=true},
+    new ProductReview(){ProductID=10,UserID=1,Rating=10,Review="Nice",Islike=true},
+    new ProductReview(){ProductID=10,UserID=1,Rating=3,Review="Bad",Islike=false},
+    new ProductReview(){ProductID=10,UserID=1,Rating=4,Review="Nice",Islike=true},
+    new ProductReview(){ProductID=10,UserID=1,Rating=5,Review="Nice",Islike=true},
     new ProductReview(){ProductID=10,UserID=1,Rating=8,Review="Nice",Islike=true},
 };
 
 Console.WriteLine("Select \n1)CreateProductReview\n2)Retrive Top 3 Review\n3)retrive record whose rating >3\n" +
-    "4)GroupBy\n5)Retrive ProductId and review\n6)SkipTop5Records\n7)Datatable\n8)Find average rating\n9)Find Nice review Data");
+    "4)GroupBy\n5)Retrive ProductId and review\n6)SkipTop5Records\n7)Datatable\n8)Find average rating\n9)Find Nice review Data\n10)Retrive data who's Id is 10");
 int option = Convert.ToInt16(Console.ReadLine());
 switch(option)
 {
@@ -54,6 +58,9 @@ switch(option)
         break;
     case 9:
         ProductManagement.NiceReview(productReviewList);
+        break;
+    case 10:
+        ProductManagement.OneIdData(productReviewList);
         break;
     default:
         Console.WriteLine("Wrong Choice");

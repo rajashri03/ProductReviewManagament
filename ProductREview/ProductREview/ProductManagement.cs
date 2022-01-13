@@ -162,7 +162,7 @@ namespace ProductREview
         }
 
         /// <summary>
-        /// Who's REview Message Conatains Nce
+        /// Who's REview Message Conatains Nice
         /// </summary>
         /// <param name="productreviewlist"></param>
         public static void NiceReview(List<ProductReview> productreviewlist)
@@ -170,6 +170,22 @@ namespace ProductREview
             foreach (var list in (from productReviews in productreviewlist
                                         where productReviews.Review == "Nice"
                                         select productReviews))
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                      + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.Islike);
+            }
+        }
+
+        /// <summary>
+        /// Who's Product id is 10 and order by rating
+        /// </summary>
+        /// <param name="productreviewlist"></param>
+        public static void OneIdData(List<ProductReview> productreviewlist)
+        {
+            foreach (var list in (from productReviews in productreviewlist
+                                  where productReviews.ProductID == 10
+                                  select productReviews).OrderBy(x => x.Rating))
+
             {
                 Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
                       + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.Islike);
