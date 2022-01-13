@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +81,50 @@ namespace ProductREview
             {
                 Console.WriteLine("Product Id:{0} || UserID:{1} || Review:{2} ||Rating:{3} || IsLike:{4}", 
                     productData.ProductID,productData.UserID,productData.Review,productData.Rating,productData.Islike);
+            }
+        }
+        /// <summary>
+        /// Create datatable
+        /// </summary>
+        /// <param name="productreviewlist"></param>
+        public static void Datatables()
+        {
+            //created datatable
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ProductId");
+            dt.Columns.Add("UserId");
+            dt.Columns.Add("Review");
+            dt.Columns.Add("Rating");
+            dt.Columns.Add("Islike");
+            //created row
+            dt.Rows.Add("1","2","Good","4","True");
+            dt.Rows.Add("1","2","Bad","5","False");
+            dt.Rows.Add("2","1","Very Good","5","False");
+            dt.Rows.Add("4", "2", "Good", "4", "True");
+            dt.Rows.Add("3", "2", "Bad", "5", "False");
+            dt.Rows.Add("5", "1", "Very Good", "5", "False");
+            dt.Rows.Add("5", "2", "Good", "4", "True");
+            dt.Rows.Add("6", "2", "Bad", "5", "False");
+            dt.Rows.Add("7", "1", "Very Good", "5", "False");
+            dt.Rows.Add("8", "2", "Good", "4", "True");
+            dt.Rows.Add("9", "2", "Bad", "5", "False");
+            dt.Rows.Add("10", "1", "Very Good", "5", "False");
+            dt.Rows.Add("12", "2", "Good", "4", "True");
+            dt.Rows.Add("12", "2", "Bad", "5", "False");
+            dt.Rows.Add("11", "1", "Very Good", "5", "False");
+            dt.Rows.Add("13", "2", "Good", "4", "True");
+            dt.Rows.Add("14", "2", "Bad", "5", "False");
+            dt.Rows.Add("15", "1", "Very Good", "5", "False");
+            dt.Rows.Add("16", "2", "Good", "4", "True");
+            dt.Rows.Add("17", "2", "Bad", "5", "False");
+            dt.Rows.Add("18", "1", "Very Good", "5", "False");
+            dt.Rows.Add("19", "2", "Good", "4", "True");
+            dt.Rows.Add("20", "2", "Bad", "5", "False");
+            dt.Rows.Add("1", "1", "Very Good", "5", "False");
+            foreach (DataRow row in dt.Rows)
+            {
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine($"{row["ProductId"]}\t|{row["UserId"]}\t|{row["Review"]}\t|{row["Rating"]}\t|{row["Islike"]}");
             }
         }
     }
